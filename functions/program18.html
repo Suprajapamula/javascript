@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Write a function which can return the factorial of a number to another variable
+            function fact(a){
+                 if(a===0 || a===1){
+                    return 1;
+                 }
+                 else{
+                    return a*fact(a-1)
+                 }
+            }
+            let res=fact(4);
+            console.log(res)
+        </script>
+    </body>
+</html>

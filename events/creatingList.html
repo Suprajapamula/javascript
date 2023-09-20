@@ -1,0 +1,127 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label>firstname</label>
+        <input type="text" id="val">
+        <br>
+        <div>
+        <button id="Submit">Submit</button>
+        </div>
+        <ul id="list">
+        
+        </ul>
+        <script>
+            var Submit=document.getElementById("Submit")
+            var Name=document.getElementById("val")
+            var list=document.getElementById("list")
+            var buttons=document.querySelector("div")
+            var update=document.createElement("button")
+            var sort1=document.createElement("button")
+            var sort2=document.createElement("button")
+            var Box=document.createElement("input")
+            var search=document.createElement("button")
+            var br=document.createElement("br")
+            update.innerHTML="update"
+            sort1.innerHTML="A-Z"
+            sort2.innerHTML="Z-A"
+            search.innerHTML="search"
+            var index
+            var firstname=[];
+            buttons.appendChild(sort1)
+            buttons.appendChild(sort2)
+            buttons.appendChild(br)
+            buttons.appendChild(Box)
+            buttons.appendChild(search)
+            //console.log(x);
+            Submit.onclick=()=>{
+                firstname.push(Name.value)
+                Name.value=""
+                abc(firstname)
+            }
+            function abc(firstname){
+                list.innerHTML=""
+            firstname.forEach(function(a,i){
+                var li=document.createElement("li")
+                li.innerHTML=a
+               // li.style.display="inline-block"
+                li.style.width="200px"
+                var bt1=document.createElement("button")
+                bt1.innerHTML="Delete"
+                var bt2=document.createElement("button")
+                bt2.innerHTML="Edit"
+                var br=document.createElement("br")
+                list.appendChild(li)
+                li.appendChild(bt1)
+                li.appendChild(bt2)
+                list.appendChild(br)
+
+                bt1.onclick=()=>{
+                    firstname.splice(i,1)
+                    abc(firstname)
+                }
+                bt2.onclick=()=>{
+                    Name.value=a
+                    buttons.appendChild(update)
+                    Submit.style.display="none"
+                    update.style.display="block"
+                    index=i
+                    
+                }
+            })
+            }                    
+            update.onclick=function(){
+                        
+                        firstname[index]=Name.value
+                        
+                        Submit.style.display="block"
+                        update.style.display="none"
+                        Name.value=""
+                        
+                        abc()
+                    }
+        sort1.onclick=()=>{
+            /*firstname.sort()
+            firstname.sort((a, b)=>(a - b))*/
+            firstname.sort(function(a,b){
+                if(a>b)
+                {
+                    return 1
+                }
+                if(a<b)
+                {
+                    return -1
+                }
+                return 0
+            })
+            abc(firstname)
+        }  
+        sort2.onclick=()=>{
+            /*firstname.sort()
+            firstname.sort((a, b)=>(a - b))
+            firstname.reverse()*/
+            firstname.sort(function(a,b){
+                if(a<b)
+                {
+                    return 1
+                }
+                if(a>b)
+                {
+                    return -1
+                }
+                return 0
+            })
+            abc(firstname)
+        }   
+        Box.onkeyup=()=>{
+            var br=firstname.filter(function(a){
+                    return JSON.stringify(a).includes(Box.value)        
+                    //return a.startsWith(Box.value)
+                 
+            })
+            abc(br)
+        }
+        </script>
+    </body>
+</html>

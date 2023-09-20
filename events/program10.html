@@ -1,0 +1,53 @@
+<html>
+    <head></head>
+    <body>
+        <style>
+            #myContainer{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <div id="myContainer"></div>
+         <script>
+            document.body.style.backgroundColor="antiquewhite";
+            let myContainer=document.getElementById("myContainer");
+            let headingEl=document.createElement("h1");
+            headingEl.style.color="red";
+            headingEl.innerHTML="change background color using toggle button";
+            myContainer.appendChild(headingEl);
+
+            let card=document.createElement("div");
+            card.style.border="1px solid red";
+            card.style.height="100px";
+            card.style.width="100px";
+            myContainer.appendChild(card);
+            
+            let btnEl=document.createElement("button");
+            btnEl.innerHTML="Toggle";
+            btnEl.style.backgroundColor="red";
+            btnEl.style.marginTop="10px";
+            var isButtonClicked=false;
+            card.style.backgroundColor="white";
+            console.log(card.style.backgroundColor);
+            btnEl.onclick=function(){
+                /*isButtonClicked=!isButtonClicked;
+                if(isButtonClicked===true){
+                    card.style.backgroundColor="yellow";
+                }
+                else{
+                    card.style.backgroundColor="white";
+                }*/
+                if(card.style.backgroundColor==="white"){
+                    card.style.backgroundColor="yellow";
+                }
+                else{
+                    card.style.backgroundColor="white";
+                }
+
+            }
+            myContainer.appendChild(btnEl);
+         </script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+            .mainContainer{
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+            }
+            .label{
+                font-weight:bold ;
+                color:red;
+                font-size: medium;
+            }
+            #divEl{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 2px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="mainContainer">
+        <h1 style="color:red">Add Contact Cards</h1>
+        <lebel class="label">Name:</lebel><input type="text" id="name">
+        <lebel class="label">Number:</lebel><input type="number" id="number">
+        <lebel class="label">Email:</lebel><input type="email" id="email">
+        <lebel class="label">Enter Image URL:</lebel><input type="text" id="url">
+        <button id="button" style="margin-top: 2px;background-color: orange;">Add contact</button>
+        </div>
+        <script>
+            document.body.style.backgroundColor="antiquewhite";
+            let button=document.getElementById("button");
+            let name=document.getElementById("name");
+            let number=document.getElementById("number");
+            let email=document.getElementById("email");
+            let url=document.getElementById("url");
+            button.onclick=function(){
+                let nameData = name.value;
+                let numberData = number.value;
+                let emailData = email.value;
+                let urlData = url.value;
+
+                let divEl = document.createElement("div");
+                divEl.id="divEl"
+                divEl.style.border = "2px solid red";
+                divEl.style.height = "200px";
+                divEl.style.width = "250px";
+                divEl.style.backgroundColor = "yellow";
+
+                let imgEl = document.createElement("img");
+                imgEl.src = urlData;
+                imgEl.style.height = "30px";
+                imgEl.style.width = "30px";
+                imgEl.style.borderRadius="50px";
+                divEl.appendChild(imgEl);
+
+                let nameEl = document.createElement("p");
+                nameEl.style.textAlign="center";
+                nameEl.innerHTML = "Name: " + nameData;
+                divEl.appendChild(nameEl);
+                let numberEl = document.createElement("p");
+                numberEl.style.textAlign="center";
+                numberEl.innerHTML = "Number: " + numberData;
+                divEl.appendChild(numberEl);
+                let emailEl = document.createElement("p");
+                emailEl.style.textAlign="center";
+                emailEl.innerHTML = "Email: " + emailData;
+                divEl.appendChild(emailEl);
+                document.body.appendChild(divEl);
+                    
+            }
+        </script>
+    </body>
+</html>

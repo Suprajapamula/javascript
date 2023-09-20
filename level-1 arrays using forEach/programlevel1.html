@@ -1,0 +1,99 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //1For the Given array: [23,34,54,0,4,7] print all the Array values using a for loop. Expected output: 23 34 54 0 4 7
+            let arr=[23,34,54,0,4,7]
+            arr.forEach(function(a){
+                console.log(a);
+            })
+            //2.print all numbers in an array except the first element. Expected output: 34 54 0 4 7
+            arr.forEach(function(a,b){
+                if(b!==0){
+                    console.log(a)
+                }
+            })
+            //3.Print all elements in an array except the last element Expected output: 23 34 54 0 4
+            arr.forEach(function(a,b){
+                if(b<arr.length-1){
+                    console.log(a)
+                }
+            })
+            //4.Print all the numbers from last index to first index Expected output: 7 4 0 54 34 23
+            arr.forEach(function(a,b){
+                console.log(arr[(arr.length-1)-b])
+            })
+            //5.Print all the numbers from last index to first index except the first element Expected output: 4 0 54 34 23
+                let  reversedArr = arr.slice().reverse();
+
+                reversedArr.forEach(function (a,b) {
+                if (b!== 0) {
+                  console.log(a);
+                }
+               });
+            //6.Print all the numbers from last index to first index except the last element Expected output: 7 4 0 54 34
+            let  reversed = arr.slice().reverse();
+
+            reversed.forEach(function (a,b) {
+            if (b!==arr.length-1) {
+                console.log(a);
+            }
+            });
+            //7.Print only the last 4 elements of an array. Expected output: 54 0 4 7
+             arr.forEach(function(a,i){
+                if(i>2){
+                    console.log(a)
+                }
+             })
+             //8.For the Given array: [23,34,54,10,4,7] print values that are greater than the given number. Given number: 20, Expected output: 23,34,54
+              arr.forEach(function(a){
+                   if(a>20){
+                    console.log(a)
+                   }
+              })
+              //9.For the Given array: [23,34,54,10,4,7] print all the even numbers in an Array. Expected output: 34,54,10,4
+              arr.forEach(function(a){
+                if(a%2===0){
+                    console.log(a)
+                }
+              })
+              //10.For the Given array: [23,34,54,10,4,7] print all the odd numbers in an Array. Expected output: 23,7
+              arr.forEach(function(a){
+                if(a%2===1){
+                    console.log(a)
+                }
+              })
+              //11.For the Given array: [23,-34,-54,10,-4,7] print all the positive numbers in an array. Expected output: 23,10,7
+              let newArr=[23,-34,-54,10,-4,7] 
+              newArr.forEach(function(a){
+                if(a>0){
+                    console.log(a)
+                }
+              })
+              //12.Print only the 2 digit numbers from an array
+             arr.forEach(function(a){
+                if(a>10 && a<99){
+                    console.log(a)
+                }
+             })
+             //13.Print only multiples of 5 from an array
+             arr.forEach(function(a){
+                if(a%5===0){
+                    console.log(a)
+                }
+             })
+             //14.Print only multiples of 2 AND 3 from an array
+             arr.forEach(function(a){
+                if(a%2===0 && a%3===0){
+                    console.log(a)
+                }
+             })
+             //15.Print only multiples of 3 OR 5 from an array
+             arr.forEach(function(a){
+                if(a%3===0 || a%5===0){
+                    console.log(a)
+                }
+             })
+        </script>
+    </body>
+</html>

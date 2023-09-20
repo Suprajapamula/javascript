@@ -1,0 +1,95 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var people = [
+                {
+                "firstname": "praveen",
+                "lastname": "gubbala",
+                "age": 36,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 10000
+                },
+                {
+                "firstname": "srikanth",
+                "lastname": "gubbala",
+                "age": 32,
+                "gender": "male",
+                "city": "bengaluru",
+                "salary": 20000
+                },
+                {
+                "firstname": "pradeep",
+                "lastname": "reddy",
+                "age": 21,
+                "gender": "male",
+                "city": "hyd",
+                "salary": 25000
+                },
+                {
+                "firstname": "mounika",
+                "lastname": "mudiraj",
+                "age": 20,
+                "gender": "female",
+                "city": "nalgonda",
+                "salary": 30000
+                },
+                {
+                "firstname": "nikhil",
+                "lastname": "m",
+                "age": 22,
+                "gender": "male",
+                "city": "guntur",
+                "salary": 2000
+                },
+                {
+                "firstname": "riya",
+                "lastname": "bhadouria",
+                "age": 14,
+                "gender": "female",
+                "city": "indore",
+                "salary": 40000
+                }
+            ];
+        //Display all the people's data in a table.
+        let b=document.createElement("table");
+        people.forEach(function(a){
+                var c=document.createElement("tr")
+                var d=document.createElement("td")
+                var e=document.createElement("td")
+                var i=document.createElement("td")
+                var f=document.createElement("td")
+                var g=document.createElement("td")
+                var h=document.createElement("td")
+                
+                d.innerHTML=a.firstname
+                e.innerHTML=a.lastname
+                f.innerHTML=a.age
+                i.innerHTML=a.gender
+                g.innerHTML=a.city
+                h.innerHTML=a.salary
+                c.appendChild(d)
+                c.appendChild(e)
+                c.appendChild(f)
+                c.appendChild(i)
+                c.appendChild(g)
+                c.appendChild(h)
+                b.appendChild(c)
+                d.style.border="1px solid"
+                e.style.border="1px solid"
+                f.style.border="1px solid"
+                g.style.border="1px solid"
+                h.style.border="1px solid"
+                i.style.border="1px solid"
+            })
+            var y=document.querySelector("body")
+            y.appendChild(b)
+            {
+            b.style.border="2px solid black"
+            b.style.cellSpacing="0px"
+            }
+        
+        </script>
+    </body> 
+</html>

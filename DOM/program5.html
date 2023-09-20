@@ -1,0 +1,125 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // 1.Create one h1 element and put some text into it.
+            let h1Element=document.createElement("h1");
+            h1Element.innerHTML="Hello DOM World!"
+            document.body.appendChild(h1Element);
+
+            //2.Create one h1 element,put some text into it and apply red font color to it
+            let h1ElementTwo=document.createElement("h1");
+            h1ElementTwo.innerHTML="Hello DOM World!";
+            h1ElementTwo.style.color="red";
+            document.body.appendChild(h1ElementTwo)
+
+            //3.Take an array of names and create a list from it.
+             let ulElement=document.createElement("ul");
+             document.body.appendChild(ulElement);
+             let names=["ramesh","suresh","praveen","gopi","sunil"]
+             names.forEach(function(name){
+                let liElement=document.createElement("li");
+                liElement.innerHTML=name;
+                console.log(liElement)
+                ulElement.appendChild(liElement)
+             })
+             //4.Take an array of numbers and create a list from it.
+             let ulEle=document.createElement("ul");
+             document.body.appendChild(ulEle);
+             for(let i=11;i<=17;i++){
+                let liEl=document.createElement("li");
+                liEl.innerHTML=i;
+                ulEle.appendChild(liEl)
+             }
+             //5.Take an array of objects and create a table form it
+              let data=[{
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              },
+              {
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              },
+              {
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              },
+              {
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              },
+              {
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              },
+              {
+                name:"praveen",
+                age:36,
+                Gender:"male",
+                Salary:10000,
+                City:"hyd"
+              }
+            ];
+            let table = document.createElement("table");
+            var tableElement = document.getElementById('tableEl')
+            table.style.border = '2px solid black';
+            table.style.borderCollapse = 'collapse';
+            
+            let row = document.createElement("tr");
+            for (let key in data[0]) {
+                let th = document.createElement("th");
+                th.textContent = key;
+                th.style.border= '2px solid black';
+                row.appendChild(th);
+            }
+            table.appendChild(row);
+            data.forEach(function(item) {
+                let  row = document.createElement("tr");
+                for (let key in item) {
+                   let cell = document.createElement("td"); 
+                   cell.style.border= '2px solid black';     
+                   cell.textContent = item[key];
+                   row.appendChild(cell);
+                }
+            table.appendChild(row);
+            });
+
+            document.body.appendChild(table);
+            document.body.appendChild(tableElement)
+
+            //6.Take an array of image urls and display the images in browser
+            let arr=[
+              'https://images.unsplash.com/photo-1688920556232-321bd176d0b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60.jpg',
+              'https://images.pexels.com/photos/42257/flowerful-flowery-flowerly-42257.jpeg?cs=srgb&dl=pexels-jill-wellington-42257.jpg&fm=jpg&_gl=1*oxz8kq*_ga*MjA1MDE5NDE5NC4xNjkzNjM4Mzgw*_ga_8JE65Q40S6*MTY5MzYzODM4MS4xLjEuMTY5MzYzOTAzNy4wLjAuMA.jpg',
+              'https://images.pexels.com/photos/42257/flowerful-flowery-flowerly-42257.jpeg?cs=srgb&dl=pexels-jill-wellington-42257.jpg&fm=jpg&_gl=1*oxz8kq*_ga*MjA1MDE5NDE5NC4xNjkzNjM4Mzgw*_ga_8JE65Q40S6*MTY5MzYzODM4MS4xLjEuMTY5MzYzOTAzNy4wLjAuMA.jpg'
+
+            ];
+            let container=document.createElement("div");
+            document.body.appendChild(container);
+            arr.forEach(function(url){
+                let img=document.createElement('img');
+                img.src=url;
+                img.style.border = '2px solid red';
+                container.appendChild(img)
+                console.log(img)
+            })
+              
+        </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="unList"></ul>
+        <script>
+            var students = [
+                    {
+                    name:'jaya',
+                    gender:'female',
+                    place:'gachibowli',
+                    },
+                    {
+                    name:'dasu',
+                    gender:'male',
+                    place:'kphb'
+                    },
+                    {
+                    name:'swati',
+                    gender:'female',
+                    place:'pune'
+                    },
+                    {
+                    name:'pallavi',
+                    gender:'female',
+                    place:'assam'
+                    },
+                    {
+                    name:'kiran',
+                    gender:'male',
+                    place:'kondapur'
+                    },
+                    {
+                    name:'thirumala',
+                    gender:'male',
+                    place:'madhapur'
+                    },
+                    {
+                    name:'priya',
+                    gender:'female',
+                    place:'hitech'
+                    },
+                ]
+                let unList=document.getElementById("unList");
+                unList.style.border="3px solid red";
+                unList.style.padding="25px"
+                document.body.appendChild(unList);
+                students.forEach(function(a){
+                    let liEl=document.createElement("li");
+                    liEl.innerHTML=a.name;
+                    unList.appendChild(liEl)
+                    let unList2=document.createElement("ul");
+                    let liEl2=document.createElement("li")
+                    let liEl3=document.createElement("li")
+                    liEl2.innerHTML=a.gender;
+                    liEl3.innerHTML=a.place;
+                    unList2.appendChild(liEl2)
+                    unList2.appendChild(liEl3)
+                    unList.appendChild(unList2);
+                    if(a.gender==="female"){
+                        liEl.style.backgroundColor="pink";
+                        unList2.style.backgroundColor="pink";
+                    }
+                    else{
+                        liEl.style.backgroundColor="blue";
+                        unList2.style.backgroundColor="blue";
+                    }
+                })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <style>
+            .card{          
+                height:100px;
+                width:200px;
+                border:2px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        </style>
+        <div class="card" id="card1"></div>
+        <script>
+            var card1=document.getElementById("card1");
+            var spanEl=document.createElement("span");
+            var isClicked=false;
+            spanEl.innerHTML="Iam Nothing";
+
+            let btnEl=document.createElement("button");
+            btnEl.innerHTML="True/False";
+            btnEl.style.marginTop="10px";
+            btnEl.onclick=function(){
+                isClicked=!isClicked;
+                /*if(isClicked===true){
+                    spanEl.innerHTML="true";
+                }
+                else{
+                    spanEl.innerHTML="false";
+                }*/
+                spanEl.innerHTML=isClicked;
+            }
+            card1.appendChild(spanEl);
+            document.body.appendChild(btnEl);
+
+        </script>
+    </body>
+</html>

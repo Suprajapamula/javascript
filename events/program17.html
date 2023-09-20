@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            #mainContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mainContainer">
+            <h1 style="color:red">Image Carousel</h1>
+            <div id="myContainer"></div>
+        </div>
+        <script>
+            document.body.style.backgroundColor="antiquewhite";
+            let mainContainer=document.getElementById("mainContainer");
+            let arrOfImgs=["https://th.bing.com/th/id/OIP.74zNRAWPkgy4bIEcM4w_pQHaGz?pid=ImgDet&rs=1","https://th.bing.com/th/id/R.5b31c7283e4b9641f2e4e22235a146dd?rik=H4vmpCI9ihVdqQ&riu=http%3a%2f%2fwww.planetware.com%2fphotos-large%2fUSNY%2fusa-best-places-washington.jpg&ehk=li5tzOFrHmEr0stbKzzwaeixD5PcsPeAl%2f5pJdmTM4g%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1","https://media.cntraveler.com/photos/5772d051c06bba921a97a129/master/pass/horseshoe-bend-grand-canyon-GettyImages-173269615.jpg","https://img.budgettravel.com/_galleryImage/golden-gate-bridge-san-francisco-952012-114744_original.jpeg?mtime=20140903194435","https://th.bing.com/th/id/R.a4ef2091eab1c5e5405f441fb05607d6?rik=r34ZLKot5AJwFw&riu=http%3a%2f%2fprod.static9.net.au%2f_%2fmedia%2f2017%2f08%2f31%2f14%2f02%2fGettyImages186178129_super.jpg&ehk=jimlsEH5e%2b7ObHdecJzARTiKzY4KP2eInbjrksgFHns%3d&risl=&pid=ImgRaw&r=0"]
+            let myContainer=document.getElementById("myContainer");
+            let imgEl=document.createElement("img");
+            imgEl.src=arrOfImgs[0];
+            imgEl.style.height="300px";
+            imgEl.style.width="300px";
+            myContainer.appendChild(imgEl);
+
+            let divEl=document.createElement("div");
+            mainContainer.appendChild(divEl);
+
+            let preButton=document.createElement("button");
+            preButton.innerHTML="prev";
+            preButton.style.marginRight="70px";
+            preButton.style.marginTop="10px";
+            preButton.style.backgroundColor="orange";
+            divEl.appendChild(preButton);
+
+            let nextBtn=document.createElement("button");
+            nextBtn.innerHTML="Next";
+            nextBtn.style.marginLeft="70px";
+            nextBtn.style.marginTop="10px";
+            nextBtn.style.backgroundColor="orange";
+            divEl.appendChild(nextBtn);
+
+            let count=1;
+            nextBtn.onclick=function(){
+                imgEl.src=arrOfImgs[count];
+                imgEl.style.height="300px";
+                imgEl.style.width="300px";
+                myContainer.appendChild(imgEl);
+                count=(count+1)%arrOfImgs.length;
+            }
+            preButton.onclick=function(){
+                if(count===0){
+                    imgEl.src=arrOfImgs[0];
+                }
+                else{
+                imgEl.src=arrOfImgs[count-1];
+                imgEl.style.height="300px";
+                imgEl.style.width="300px";
+                myContainer.appendChild(imgEl);
+                count=(count-1)%arrOfImgs.length;
+                }
+            }
+        </script>
+    </body>
+</html>

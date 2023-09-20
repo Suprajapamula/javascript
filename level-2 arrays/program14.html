@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Check whether the given two strings are anagrams or not.
+            const str1 =prompt();
+            const str2=prompt()
+            const sortedString1 = str1.split('').sort().join('');
+            const sortedString2 = str2.split('').sort().join('');
+            if (str1.length===str2.length){
+                if(sortedString1===sortedString2){
+                    console.log("anagram")
+                }
+                else{
+                    console.log("not anagram")
+                }
+            }
+            else{
+                console.log("not anagram")
+            }
+            
+        </script>
+    </body>
+</html>

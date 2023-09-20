@@ -1,0 +1,132 @@
+<html>
+    <head></head>
+    <body>Name:<input type="text" id="userName" placeholder="Enter Your name">
+        <button id="submit">Submit</button>
+        Search:<input type="search" id="searchBtn">
+        <ul id="searchUl"></ul>
+        <ul id="unorderedList"></ul>
+        <script>
+            let userName=document.getElementById("userName");
+            let submit=document.getElementById("submit");
+            let searchUl=document.getElementById("searchUl");
+            let updateBtn=document.createElement("button");
+            let searchBtn=document.getElementById("searchBtn");
+            /*searchBtn.onchange=function(){
+                let searchBtnData=searchBtn.value;
+                let searchValue=nameArr.includes(searchBtnData)
+                console.log(searchValue);
+               if (searchValue ){
+                let searchLiEl=document.createElement("li");
+                 searchLiEl.textContent=searchBtnData;
+                 searchUl.appendChild(searchLiEl);
+                }
+                else{
+                    let searchLiE2=document.createElement("li");
+                    searchLiE2.textContent="Not Fount";
+                    searchUl.appendChild(searchLiE2);
+                }
+            searchBtn.value='';
+                
+            }*/
+            updateBtn.innerHTML="update";
+            updateBtn.style.display="none";
+            updateBtn.onclick=function(){
+                let newName=userName.value;
+                nameArr[currentIndex]=newName; 
+                console.log(nameArr[currentIndex]);
+                displayList()
+            }
+            let currentIndex;
+            let nameArr=[];
+            let unorderedList=document.getElementById("unorderedList");
+            submit.onclick=function(){
+                let userNameData=userName.value;
+                nameArr.push(userNameData);
+                console.log(nameArr);
+                displayList()
+            }
+            function displayList(){
+                unorderedList.innerHTML="";
+                userName.value="";
+                nameArr.forEach(function(a,i){
+                    let liEl=document.createElement("li");
+                    liEl.innerHTML=nameArr[i];
+                    liEl.style.listStyle="none";
+                    currentIndex=i;
+                    let delBtn=document.createElement("button");
+                    delBtn.style.margin="3px";
+                    let editBtn=document.createElement("button");
+                    editBtn.style.margin="3px";
+                    editBtn.innerHTML="Edit";
+                    editBtn.onclick=function(){
+                        delBtn.style.display="none";
+                        editBtn.style.display="none";
+                        updateBtn.style.display="block";
+                        liEl.appendChild(updateBtn);
+                        userName.value=nameArr[i];
+                    }
+                    delBtn.innerHTML="Del";
+                    delBtn.onclick=function(){
+                        nameArr.splice(i,1);
+                        displayList()
+                    }
+                    liEl.appendChild(delBtn);
+                    liEl.appendChild(editBtn);
+                    unorderedList.appendChild(liEl);
+                })
+            }
+
+            let sortBtn1=document.createElement("button");
+            sortBtn1.innerHTML="sortBtn1";
+            document.body.appendChild(sortBtn1);
+            let sortBtn2=document.createElement("button");
+            sortBtn2.innerHTML="sortBtn2";
+            document.body.appendChild(sortBtn2);
+            sortBtn1.onclick=()=>{
+            /*userName.sort()
+            userName.sort((a, b)=>(a - b))*/
+                console.log("hello");
+                nameArr.sort(function(a,b){
+                    if(a>b)
+                    {
+                        return 1
+                    }
+                    if(a<b)
+                    {
+                        return -1
+                    }
+                    return 0
+                })
+            displayList()
+            }  
+        sortBtn2.onclick=()=>{
+            /*userName.sort()
+            userName.sort((a, b)=>(a - b))
+            userName.reverse()*/
+            nameArr.sort(function(a,b){
+                if(a<b)
+                {
+                    return 1
+                }
+                if(a>b)
+                {
+                    return -1
+                }
+                return 0
+            })
+            displayList()
+        }  
+        searchBtn.onkeyup=()=>{
+            var br=userName.filter(function(a){
+                    return JSON.stringify(a).includes(searchBtn.value)        
+                    //return a.startsWith(Box.value)
+                 
+            })
+            displayList(br)
+        }
+ 
+
+
+        </script>
+    </body>
+</html>

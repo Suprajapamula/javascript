@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Write a function which can check a given number is prime number or not
+            function isPrime(num) {
+                let count=0
+               for(let i=1;i<=num;i++){
+                if(num%i===0){
+                    count=count+1
+                }
+               }
+               if(count===2){ 
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            let num=isPrime(2);
+            console.log(num)
+        </script>
+    </body>
+</html>

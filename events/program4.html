@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            .card{
+                height:100px;
+                width:200px;
+                border:2px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card" id="cardContainer" onmouseover="abc()"></div>
+        <script>
+            let arr=["red","green","blue","black","violet"]
+            let cardContainer=document.getElementById("cardContainer");
+            let currentIndex=0;
+            cardContainer.style.backgroundColor = arr[currentIndex];
+            function abc(){
+                if(currentIndex<arr.length-1){
+                    cardContainer.style.backgroundColor = arr[currentIndex+1];
+                    currentIndex=(currentIndex+1);
+                }
+                else{
+                    currentIndex=0;
+                    cardContainer.style.backgroundColor = arr[currentIndex];
+                }
+                
+            }
+        
+        </script>
+    </body>
+</html>

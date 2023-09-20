@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+            #myContainer{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="myContainer"></div>
+        <script>
+            let myContainer=document.getElementById("myContainer");
+            let headingEl=document.createElement("h1");
+            headingEl.innerHTML="Show bulb on/off image using toggle button";
+            headingEl.style.color="red";
+            myContainer.appendChild(headingEl);
+
+            let imgContainer=document.createElement("div");
+            myContainer.appendChild(imgContainer);
+            let imgEl=document.createElement("img");
+            imgEl.src="https://freepngimg.com/thumb/lamp/5-electric-lamp-png-image.png";
+            imgEl.style.height="150px";
+            imgEl.style.width="150px";
+            imgContainer.appendChild(imgEl);
+
+            let btnEl=document.createElement("button");
+            btnEl.innerHTML="ON";
+            btnEl.style.width="50px";
+            btnEl.style.borderRadius="3px";
+            btnEl.style.marginTop="10px";
+            btnEl.style.backgroundColor="red";
+            var isClicked=false;
+            btnEl.onclick=function(){
+               isClicked=!isClicked;
+               if(isClicked===true){
+                imgEl.src="https://media.gettyimages.com/photos/light-bulb-giving-off-yellow-light-picture-id540194098?s=612x612";
+                btnEl.innerHTML="OFF";
+               }
+               else{
+                imgEl.src="https://th.bing.com/th/id/R.44f0e00a6d49c7bd7b11c343de2b9dfb?rik=%2bCy9Lemi1T9j7Q&riu=http%3a%2f%2fthumbs.dreamstime.com%2fx%2flight-bulb-off-13098308.jpg&ehk=e7crhhzGaa6rltNHPGLYE9ZzCIrjJEM1cEtO0BkgMXE%3d&risl=&pid=ImgRaw&r=0";
+                btnEl.innerHTML="ON";
+               }
+               if(btnEl.innerHTML==="ON"){
+                  imgEl.src="https://media.gettyimages.com/photos/light-bulb-giving-off-yellow-light-picture-id540194098?s=612x612";
+                  btnEl.innerHTML="OFF";
+               }
+               else{
+                  imgEl.src="https://freepngimg.com/thumb/lamp/5-electric-lamp-png-image.png";
+                  btnEl.innerHTML="ON";
+               }
+            }
+            myContainer.appendChild(btnEl);
+
+
+        </script>
+    </body>
+</html>

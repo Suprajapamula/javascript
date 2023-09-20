@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            #mainContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="mainContainer"></div>
+        <script>
+            document.body.style.backgroundColor="antiquewhite";
+            let mainContainer=document.getElementById("mainContainer");
+            let headingEl=document.createElement("h1");
+            headingEl.innerHTML="Change background color of box using button";
+            headingEl.style.color="red";
+            mainContainer.appendChild(headingEl);
+
+            let card=document.createElement("div");
+            card.style.border="1px solid red";
+            card.style.height="100px";
+            card.style.width="100px";
+            card.style.marginBottom="10px";
+            mainContainer.appendChild(card);
+
+            let divEl2=document.createElement("div");
+            mainContainer.appendChild(divEl2);
+
+            let btnEl1=document.createElement("button");
+            btnEl1.innerHTML="ON";
+            btnEl1.style.backgroundColor="red";
+            btnEl1.style.marginRight="5px";
+            btnEl1.onclick=function(){
+                card.style.backgroundColor="yellow";
+            }
+            divEl2.appendChild(btnEl1);
+
+            let btnEl2=document.createElement("button");
+            btnEl2.innerHTML="OFF";
+            btnEl2.style.border="1px solid red";
+            btnEl2.onclick=function(){
+                card.style.backgroundColor="white";
+            }
+            divEl2.appendChild(btnEl2);
+
+
+        </script>
+    </body>
+</html>

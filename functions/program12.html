@@ -1,0 +1,17 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Write a function which can display the given arguments in ascending order
+            function order(a,b,c,d,e){
+                let nums=[a,b,c,d,e];
+                nums.sort(function(x,y){
+                    return x-y;
+                })
+                return nums
+            }
+            let res=order(5,3,4,23,1);
+            console.log(res);
+        </script>
+    </body>
+</html>

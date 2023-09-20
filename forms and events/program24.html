@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <form id="formEl">
+            Firstname:<input type="text" id="firstname" required><br>
+            <p id="alertMsg">Please enter this field</p>
+            Middlename:<input type="text"><br>
+            Lastname:<input type="text"><br>
+            <button id="btn">Update</button>
+        </form>
+        <script>
+            let formEl=document.getElementById("formEl");
+            formEl.onsubmit=function(event){
+                 event.preventDefault()
+            }
+            let alertMsg=document.getElementById("alertMsg")
+            let btnEl=document.getElementById("btn");
+            let firstname=document.getElementById("firstname");
+            firstname.onblur=function(event){
+                console.log("event");
+                console.dir(event);
+                if(!event.target.validity.valid){
+                    alertMsg.style.display="block";
+                } 
+                else{
+                    alertMsg.style.display="none";
+                }        
+            }
+        </script>
+    </body>
+</html>

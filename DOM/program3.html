@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="unorderedList"></ul>
+        <script>
+            let ulElement=document.getElementById("unorderedList")
+             document.body.appendChild(ulElement);
+             let names=["Apple","Mango","Orange"]
+             let arr=[];
+             names.forEach(function(name){
+                let liElement=document.createElement("li");
+                liElement.innerHTML=name;
+                arr.push(name)
+                ulElement.appendChild(liElement)
+             })
+             console.log(arr)
+            
+
+        </script>
+    </body>
+</html>

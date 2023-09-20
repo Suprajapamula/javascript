@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <style>
+            .mainContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mainContainer">
+        <input type="text" id="textBox" disabled><br>
+        <button id="button">Enable the text box</button>
+        </div>
+        <script>
+            let textBox=document.getElementById("textBox");
+            let button=document.getElementById("button");
+            textBox.style.marginBottom="1px";
+            button.onclick=function(){
+                textBox.disabled=false;
+                textBox.style.borderColor="blue";
+            }
+
+        </script>
+    </body>
+</html>

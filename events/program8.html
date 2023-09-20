@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+             .mainContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+             }
+        </style>
+    </head>
+    <body>
+        <div id="mainContainer" class="mainContainer"></div>
+        <script>
+            let mainContainer=document.getElementById("mainContainer");
+            document.body.appendChild(mainContainer);
+
+            let headingEl=document.createElement("h1");
+            headingEl.innerHTML="Like and Dislike Button";
+            headingEl.style.color="red";
+            mainContainer.appendChild(headingEl);
+
+            let buttonEl=document.createElement("button");
+            buttonEl.innerHTML="Like";
+            buttonEl.style.width="100px";
+            buttonEl.style.backgroundColor="green";
+            var count=0;
+            let spanE1=document.createElement("span"); 
+            
+            spanE1.innerHTML=count;
+            buttonEl.onclick=function(){
+                count=parseInt(count)+1;
+                spanE1.innerHTML=count; 
+                span.appendChild(spanE1);
+            }
+            mainContainer.appendChild(spanE1);
+            mainContainer.appendChild(buttonEl);
+            let span=document.createElement("span");
+            mainContainer.appendChild(span);
+
+            let brEl=document.createElement("br");
+            mainContainer.appendChild(brEl);
+
+            let btnE2=document.createElement("button");
+            btnE2.innerHTML="Dislike";
+            btnE2.style.backgroundColor="red";
+            btnE2.style.width="100px";
+            btnE2.style.color="white";
+            var count1=1;
+            let spanEl2=document.createElement("span");
+            spanEl2.innerHTML=0;
+            btnE2.onclick=function(){
+                spanEl2.innerHTML=count1;
+                span2.appendChild(spanEl2);
+                count1=parseInt(count1)+1;
+            }
+            mainContainer.appendChild(btnE2);
+            let span2=document.createElement("span");
+            mainContainer.appendChild(span2);
+            
+
+        </script>
+    </body>
+</html>

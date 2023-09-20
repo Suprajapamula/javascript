@@ -1,0 +1,48 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" placeholder="firstname" id="firstname"><br>
+        <input type="text" placeholder="lastname" id="lastname"><br>
+        <input type="text" placeholder="age" id="age"><br>
+        <button id="btn">submit</button>
+        <table id="table1" style="border:1px solid black;border-collapse: collapse;"></table>
+        <script>
+            let table=document.getElementById("table1");
+            let btn=document.getElementById("btn");
+            var detailsArr=[];
+            btn.onclick=function(){
+                var details={
+                    firstname:'',
+                    lastname:'',
+                    age:'',
+                }
+                details.firstname=document.getElementById("firstname").value;
+                details.lastname=document.getElementById("lastname").value;
+                details.age=document.getElementById("age").value;
+
+                detailsArr.push(details);
+                console.log(detailsArr);
+                displaytable()
+            }
+            function displaytable(){
+                table.innerHTML="";
+                detailsArr.forEach(function(a,i){
+                    var tr=document.createElement("tr");
+                    var td1=document.createElement("td");
+                    td1.style.border="1px solid black";
+                    var td2=document.createElement("td");
+                    td2.style.border="1px solid black";
+                    var td3=document.createElement("td");
+                    td3.style.border="1px solid black";
+                    td1.innerHTML=detailsArr[i].firstname;
+                    td2.innerHTML=detailsArr[i].lastname;
+                    td3.innerHTML=detailsArr[i].age;
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    table1.appendChild(tr);
+                })
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            let side1=parseInt(prompt());
+            let side2=parseInt(prompt());
+            let side3=parseInt(prompt());
+
+            if((side1===side2) && (side2===side3) && (side3===side1)){
+                console.log("Its a Equilateral Triangle");
+            }
+            else if((side1===side2) || (side2===side3) || (side3===side1)){
+                console.log("Its Isolated Triangle");
+            }
+            else if((side1 !== side2) || (side2 !== side3) || (side3 !== side1)){
+                console.log("Its a scalene triangle")
+            }
+            else{
+                console.log("Invalid Sides to form triangle");
+            }
+
+        </script>
+    </body>
+</html>

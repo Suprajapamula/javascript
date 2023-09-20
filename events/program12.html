@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <style>
+            #myContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            #myContainer{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #imgContainer{
+                margin-top: 3px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+           <div id="myContainer">
+            <div id="myContainer"></div>
+            <div id="imgContainer"></div>
+           </div>
+        <script>
+            let myContainer=document.getElementById("myContainer");
+            document.body.appendChild(myContainer);
+            let divE2=document.createElement("div");
+            myContainer.appendChild(divE2);
+            imgEl=document.createElement("img");
+            let imgContainer=document.getElementById("imgContainer");
+            myContainer.appendChild(imgContainer);
+            let img1=document.createElement("img");
+            img1.style.height="100px";
+            img1.style.width="100px";
+            img1.src="https://tse1.mm.bing.net/th?id=OIP.PxFHiXJShI3lrBPq3SZRCgHaEo&pid=Api&P=0&h=180";
+            img1.onmouseover=function(){
+                imgEl.src="https://tse1.mm.bing.net/th?id=OIP.PxFHiXJShI3lrBPq3SZRCgHaEo&pid=Api&P=0&h=180";
+                imgEl.style.width="400px";
+                imgEl.style.height="400px";
+                myContainer.appendChild(imgEl);
+
+            }
+            divE2.appendChild(img1);
+
+            let img2=document.createElement("img");
+            img2.style.height="100px";
+            img2.style.width="100px";
+            img2.src="http://wonderfulengineering.com/wp-content/uploads/2014/05/airplane-wallpaper-1.jpg";
+            img2.onmouseover=function(){
+                imgEl.src="http://wonderfulengineering.com/wp-content/uploads/2014/05/airplane-wallpaper-1.jpg";
+                imgEl.style.width="400px";
+                imgEl.style.height="400px";
+                myContainer.appendChild(imgEl);
+            }
+            divE2.appendChild(img2);
+
+            let img3=document.createElement("img");
+            img3.style.height="100px";
+            img3.style.width="100px";
+            img3.src="https://g.foolcdn.com/editorial/images/563400/airplanetakingoff.jpg";
+            img3.onmouseover=function(){
+                imgEl.src="https://g.foolcdn.com/editorial/images/563400/airplanetakingoff.jpg";
+                imgEl.style.width="400px";
+                imgEl.style.height="400px";
+                myContainer.appendChild(imgEl);
+            }
+
+            divE2.appendChild(img3);
+
+            
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let percentageOfMen=52;
+            let totalPopulation=80000;
+            let percentageOfTotatlLiteracy=48;
+            let percentageofLiterateMen=35;
+            let totalMen=(percentageOfMen/100)*totalPopulation;
+            let totalWomen=totalPopulation-totalMen;
+            let totalNumberOfLiteratePeople=(percentageOfTotatlLiteracy/100)*totalPopulation;
+            let literateMen= (percentageofLiterateMen/100)*totalPopulation;
+            let litearateWomen=totalNumberOfLiteratePeople-literateMen;
+
+            let totalIlleterateMen=totalMen-literateMen;
+            let totalIlleterateWomen=totalWomen-litearateWomen;
+            console.log(totalIlleterateMen);
+            console.log(totalIlleterateWomen);
+        </script>
+    </body>
+</html>

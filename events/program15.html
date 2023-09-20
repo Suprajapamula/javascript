@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            #mainContainer{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="mainContainer">
+            <h1 style="color:red">Add Students</h1>
+            <div>
+                <input type="text" style="border-color: blue;" id="input">
+                <button style="background-color: yellow;" id="btnEl">Add student</button>
+            </div>
+        </div>
+        <div id="myContainer"></div>
+        <ul id="unOrderedList"></ul>
+        <script>
+        
+            document.body.style.backgroundColor="antiquewhite";
+            let mainContainer=document.createElement("mainContainer");
+            let unOrderedList=document.getElementById("unOrderedList");
+            let btnEl=document.getElementById("btnEl");
+            let input=document.getElementById("input");
+            let nameArr=[]
+            btnEl.onclick=function(){
+                let inputData=input.value;
+                nameArr.push(inputData);
+                console.log(nameArr);
+                display()
+
+                /*let ulEl=document.createElement("ul");
+                document.body.appendChild(ulEl);  
+                userInputData=input.value;
+                let listItem=document.createElement("li");
+                listItem.innerHTML=userInputData; 
+                ulEl.appendChild(listItem);*/
+            } 
+            function display(){
+                unOrderedList.innerHTML="";
+                nameArr.forEach(function(i,a){
+                    let listItem=document.createElement("li");
+                    listItem.innerHTML=i; 
+                    unOrderedList.appendChild(listItem);
+                })
+            }
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <style>
+            .card{          
+                height:50px;
+                width:50px;
+                border-radius: 2px;
+                border:2px solid black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <div class="card" id="card1">
+            
+        </div>
+        <script>
+            var card1=document.getElementById("card1");
+            //var spanEl=document.getElementById("spanE1");
+            var spanEl=document.createElement("span");
+            card1.appendChild(spanEl);
+            var isClicked=false;
+            spanEl.innerHTML="ON";
+            card1.onmouseover=function(){
+               isClicked=!isClicked;
+               if(isClicked===true){
+                spanEl.innerHTML="OFF";
+               }
+               else{
+                spanEl.innerHTML="ON";
+               }
+            }
+        </script>
+    </body>
+</html>

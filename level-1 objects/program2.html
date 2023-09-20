@@ -1,0 +1,188 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+             var marks = {
+                        "maths" : 34,
+                        "english" : 56,
+                        "science": 32,
+                        "hindi" : 75,
+                        "social science": 65
+                        };
+            //1.Print the marks of all the subjects
+            for(var sub in marks){
+                console.log(marks[sub]);
+            }
+            
+            //2.Print the names of all the subjects from the given object.
+            for(var sub in marks){
+                console.log(sub);
+            }
+            
+            //3.Count the number of subjects from the given object.
+            let sum=0;
+            for(var sub in marks){
+                sum=sum+1;
+            }
+            console.log(sum)
+
+            //4.Print the percentage of the marks of the student.
+            let total=0;
+            for(var sub in marks){
+                total=total+marks[sub];
+            }
+            console.log((total/500)*100)
+
+
+            //5.Print only those subjects where the student scored more than 35.
+            for(var sub in marks){
+                if(marks[sub]>35){
+                    console.log(sub)
+                }
+            }
+            
+            //6.Print the pass/fail status of the subjects provided 35 is the pass mark
+            for(var sub in marks){
+                if(marks[sub]<35){
+                    console.log(sub+" "+"fail")
+                }
+                else{
+                    console.log(sub+" "+"pass")
+                }
+            }
+
+            //7.Print only the passed subjects.
+            for(var sub in marks){
+                if(marks[sub]>=35){
+                    console.log(sub)
+                }
+            }
+
+            //8.Count the number of passed subjects.
+            let count=0
+            for(var sub in marks){
+                if(marks[sub]>=35){
+                    count=count+1
+                }
+            }
+            console.log(count)
+
+            //9.Print only the failed subjects
+            for(var sub in marks){
+                if(marks[sub]<35){
+                    console.log(sub)
+                }
+            }
+
+           //10.Count the number of failed subjects
+            let failCount=0
+            for(var sub in marks){
+                if(marks[sub]<35){
+                    failCount=failCount+1
+                }
+            }
+            console.log(failCount)
+
+            //11.Print the least scored subject.
+            var min_num=100;
+            for(var sub in marks){
+                if(marks[sub]<min_num){
+                     min_num=marks[sub];
+                }
+            }
+            console.log(min_num)
+
+            //12.Print the highest scored subject.
+            var max_num=0;
+            for(var sub in marks){
+                if(marks[sub]>max_num){
+                     max_num=marks[sub];
+                }
+            }
+            console.log(max_num)
+
+            //13.Check whether the student has passed in all the subjects or not.
+            let sumOfSub=0;
+            for(var sub in marks){
+                sumOfSub=sumOfSub+1;
+            }
+            let passedSub=0
+            for(var sub in marks){
+                if(marks[sub]>=35){
+                    passedSub=passedSub+1
+                }
+            }
+            if(passedSub===sumOfSub){
+                console.log("PASSED IN ALL SUBJECTS")
+            }
+            else{
+                console.log("FAILED")
+            }
+            
+
+            //14.Take the subject name from the student through prompt box and print the subject marks and pass/fail status.
+            var subName=prompt();
+            for(var sub in marks){
+                if(subName===sub){ 
+                    if(marks[sub]>=35){
+                        console.log(marks[sub]+" "+"pass")
+                    }
+                    else{
+                        console.log(marks[sub]+" "+"fail")
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

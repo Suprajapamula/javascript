@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function factorial(n) {
+                if (n === 0 || n === 1) {
+                    return 1;
+                } else {
+                    let result = 1;
+                    for (let i = 2; i <= n; i++) {
+                        result *= i;
+                    }
+                    return result;
+                }
+            }
+
+                const numbers = [5, 3, 7, 2, 4];
+                const factorialResults = [];
+
+                for (let i = 0; i < numbers.length; i++) {
+                    const num = numbers[i];
+                    const result = factorial(num);
+                    factorialResults.push(result);
+                }
+
+                console.log(factorialResults);
+        </script>
+    </body>
+</html>

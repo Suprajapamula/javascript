@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            //Write a function which can check a given number is palindrome or not
+            function palindrome(value){
+                let value1=value.toString();
+                let reverse=value1.split("").reverse().join("");
+                if(reverse===value1){
+                    return true
+                }
+                else{
+                    return false;
+                }
+            }
+            let ans=palindrome(101)
+            console.log(ans)
+        </script>
+    </body>
+</html>

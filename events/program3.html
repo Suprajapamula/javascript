@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <style>
+            .card{
+                text-align: center;
+                background-color: antiquewhite;
+                height: 100vh;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="card">
+            <h1 id="heading">Change button background color on click</h1>
+            <button id="button" onclick="change()">white</button>
+        </div>
+        <script>
+            let h1=document.getElementById("heading");
+            let btn=document.getElementById("button");
+            btn.style.backgroundColor="white";
+            h1.style.color="red";
+            let changeText=true;
+            function change(){
+                if(changeText===true){
+                    btn.style.backgroundColor="green";
+                    btn.innerHTML="green";
+                    btn.style.color="white";
+                    changeText=false;
+        
+                }
+                else{
+                    btn.style.backgroundColor="white";
+                    btn.innerHTML="white";
+                    btn.style.color="black";
+                    changeText=true;
+                }
+            }
+        </script>
+    </body>
+</html>

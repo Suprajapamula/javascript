@@ -1,0 +1,101 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" placeholder="firstname" id="firstname"><br>
+        <input type="text" placeholder="lastname" id="lastname"><br>
+        <input type="text" placeholder="age" id="age"><br>
+        <button id="btn">submit</button>
+        <button id="update">update</button>
+        <table id="table1" style="border:2px solid black"></table>
+        <script>
+            var currentIndex;
+            let firstname=document.getElementById("firstname");
+            let lastname=document.getElementById("lastname");
+            let age=document.getElementById("age");
+            let table=document.getElementById("table1");
+            let btn=document.getElementById("btn");
+            let updateBtn=document.getElementById("update");
+            updateBtn.style.display="none";
+            var detailsArr=[];
+            btn.onclick=function(){
+                var details={
+                    firstname:'',
+                    lastname:'',
+                    age:'',
+                }
+                details.firstname=document.getElementById("firstname").value
+                details.lastname=document.getElementById("lastname").value
+                details.age=document.getElementById("age").value
+
+                detailsArr.push(details);
+                console.log(detailsArr);
+                displaytable()
+            }
+            
+            function displaytable(){
+                table.innerHTML="";
+                detailsArr.forEach(function(a,i){
+                    var tr=document.createElement("tr");
+                    var td1=document.createElement("td");
+                    td1.style.border="1px solid black";
+                    var td2=document.createElement("td");
+                    td2.style.border="1px solid black";
+                    var td3=document.createElement("td");
+                    td3.style.border="1px solid black";
+                    td1.innerHTML=detailsArr[i].firstname;
+                    td2.innerHTML=detailsArr[i].lastname;
+                    td3.innerHTML=detailsArr[i].age;
+                    let delBtn=document.createElement("button");
+                    delBtn.innerHTML="Delete";
+                    let  editBtn=document.createElement("button");
+                    editBtn.innerHTML="Edit";
+                    editBtn.onclick=function(){
+                        firstname.value=a.firstname;
+                        lastname.value=a.lastname;
+                        age.value=a.age;
+                        btn.style.display="none";
+                        updateBtn.style.display="block";
+
+                        currentIndex=i;
+                        document.body.appendChild(updateBtn)
+
+                    }
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tr.appendChild(delBtn);
+                    delBtn.onclick=function(){
+                        detailsArr.splice(i,1);
+                        displaytable();
+                    }
+                    tr.appendChild(editBtn);
+                    table1.appendChild(tr);
+                })
+            }
+            update.onclick=function(){
+                var obj={
+                    firstname:firstname.value,
+                    lastname:lastname.value,
+                    age:age.value
+                }
+                detailsArr[currentIndex]=obj;
+                displaytable();
+            }
+            let sortBtn1=document.createElement("button");
+            sortBtn1.innerHTML="sort1";
+            sortBtn1.onclick=function(){
+                detailsArr.sort(function(a,b){
+                    if(a<b){
+                        return 1;
+                    }
+                    if(a>b){
+                        return -1;
+                    }
+                    return 0;
+                })
+                displaytable();
+            }
+            document.body.appendChild(sortBtn1);
+        </script>
+    </body>
+</html>
