@@ -1,0 +1,62 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button id="btn">Create Table</button>
+        <table id="table1" style="border:1px solid black;border-collapse: collapse">
+
+        </table>
+
+        <script>
+            let table1=document.getElementById("table1");
+            var countries = [];
+             fetch('https://restcountries.com/v3.1/all')
+             .then(function(res){
+                res.json()
+             .then(function(data){
+                  countries = data
+                  console.log(countries);
+                  genUi()
+                })
+             })
+              //function genUi(){
+              let btn=document.getElementById("btn");
+              btn.onclick=function(){
+                countries.forEach(function(country){
+                    let tr=document.createElement("tr");
+                    let td1=document.createElement("td");
+                    let td2=document.createElement("td");
+                    let td3=document.createElement("td");
+                    let td4=document.createElement("td");
+                    let td5=document.createElement("td");
+                    let td6=document.createElement("td");
+                    td1.innerHTML=country.name.common;
+                    td1.style.border="1px solid black"
+                    td2.innerHTML=country.capital?country.capital[0]:"No capital";
+                    td2.style.border="1px solid black";
+                    td3.innerHTML=country.population;
+                    td3.style.border="1px solid black";
+                    td4.innerHTML=country.area;
+                    td4.style.border="1px solid black";
+                    td5.innerHTML=country.borders;
+                    td5.style.border="1px solid black";
+                    var img=document.createElement("img");
+                    img.src=country.flags.svg;
+                    img.style.border="1px solid black";
+                    img.style.height="100px";
+                    img.style.width="100px";
+                    td6.appendChild(img);
+                    tr.appendChild(td1);
+                    tr.appendChild(td2);
+                    tr.appendChild(td3);
+                    tr.appendChild(td4);
+                    tr.appendChild(td5);
+                    tr.appendChild(td6);
+                    table1.appendChild(tr);
+                })
+             }
+        
+        </script>
+    </body>
+</html>
